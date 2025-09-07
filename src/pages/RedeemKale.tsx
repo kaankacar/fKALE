@@ -140,10 +140,10 @@ const RedeemKale: React.FC = () => {
     return (
       <Layout.Content>
         <Layout.Inset>
-          <Card style={{ padding: "2rem", textAlign: "center" }}>
+          <div style={{ padding: "2rem", textAlign: "center", background: "var(--bg-card, #fff)", borderRadius: "8px", border: "1px solid var(--border-light, #e0e0e0)" }}>
             <h2>Connect Wallet</h2>
             <p>Please connect your wallet to redeem KALE tokens.</p>
-          </Card>
+          </div>
         </Layout.Inset>
       </Layout.Content>
     );
@@ -171,14 +171,14 @@ const RedeemKale: React.FC = () => {
 
         {/* Loading State */}
         {loading && address && (
-          <Card style={{ padding: "2rem", marginBottom: "2rem", textAlign: "center" }}>
+          <div style={{ padding: "2rem", marginBottom: "2rem", textAlign: "center", background: "var(--bg-card, #fff)", borderRadius: "8px", border: "1px solid var(--border-light, #e0e0e0)" }}>
             <div>Loading your position and balances...</div>
-          </Card>
+          </div>
         )}
 
         {/* Balance Display */}
         {!loading && address && (
-          <Card style={{ padding: "1.5rem", marginBottom: "2rem", backgroundColor: "#f8f9fa" }}>
+          <div style={{ padding: "1.5rem", marginBottom: "2rem", backgroundColor: "#f8f9fa", borderRadius: "8px", border: "1px solid var(--border-light, #e0e0e0)" }}>
             <h3>Your Balances</h3>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", gap: "1rem" }}>
               <div>
@@ -194,12 +194,12 @@ const RedeemKale: React.FC = () => {
                 <div style={{ fontSize: "1.2rem", color: "#2d5a2d" }}>{balances.fkale.toFixed(2)}</div>
               </div>
             </div>
-          </Card>
+          </div>
         )}
 
         {/* User Position Overview */}
         {!loading && userPosition && (
-          <Card style={{ padding: "2rem", marginBottom: "2rem", backgroundColor: "#f8f9fa" }}>
+          <div style={{ padding: "2rem", marginBottom: "2rem", backgroundColor: "#f8f9fa", borderRadius: "8px", border: "1px solid var(--border-light, #e0e0e0)" }}>
             <h3>Your Position</h3>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "1rem" }}>
               <div>
@@ -237,22 +237,22 @@ const RedeemKale: React.FC = () => {
                   : `⚠️ Need ${(userPosition.fkale_amount - userPosition.kale_delivered).toFixed(2)} more KALE`}
               </div>
             </div>
-          </Card>
+          </div>
         )}
 
         {/* No Position Message */}
         {!loading && address && !userPosition && (
-          <Card style={{ padding: "2rem", marginBottom: "2rem", textAlign: "center", backgroundColor: "#f8f9fa" }}>
+          <div style={{ padding: "2rem", marginBottom: "2rem", textAlign: "center", backgroundColor: "#f8f9fa", borderRadius: "8px", border: "1px solid var(--border-light, #e0e0e0)" }}>
             <h3>No Position Found</h3>
             <p style={{ color: "#666" }}>
               You don't have an active fKALE position. Visit the "Buy fKALE" page to create one.
             </p>
-          </Card>
+          </div>
         )}
 
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "2rem" }}>
           {/* Deposit KALE Section */}
-          <Card style={{ padding: "2rem" }}>
+          <div style={{ padding: "2rem", background: "var(--bg-card, #fff)", borderRadius: "8px", border: "1px solid var(--border-light, #e0e0e0)" }}>
             <h3>1. Deposit KALE for Redemption</h3>
             <p style={{ color: "#666", marginBottom: "1.5rem" }}>
               Deposit KALE tokens to make them available for fKALE redemption by anyone.
@@ -264,6 +264,8 @@ const RedeemKale: React.FC = () => {
               </label>
               <Input
                 id="kaleDepositAmount"
+                fieldSize="md"
+                label=""
                 type="number"
                 placeholder="1000"
                 value={kaleDepositAmount}
@@ -281,6 +283,7 @@ const RedeemKale: React.FC = () => {
 
             <Button
               variant="primary"
+              size="md"
               onClick={handleDepositKale}
               disabled={!kaleDepositAmount || isLoading}
               style={{ width: "100%" }}
@@ -298,10 +301,10 @@ const RedeemKale: React.FC = () => {
                 💡 <strong>Tip:</strong> Deposit KALE equal to your fKALE position to secure your XLM for withdrawal after maturity.
               </small>
             </div>
-          </Card>
+          </div>
 
           {/* Redeem fKALE Section */}
-          <Card style={{ padding: "2rem" }}>
+          <div style={{ padding: "2rem", background: "var(--bg-card, #fff)", borderRadius: "8px", border: "1px solid var(--border-light, #e0e0e0)" }}>
             <h3>2. Redeem fKALE for KALE</h3>
             <p style={{ color: "#666", marginBottom: "1.5rem" }}>
               Burn your fKALE tokens to receive KALE at a 1:1 ratio.
@@ -318,6 +321,8 @@ const RedeemKale: React.FC = () => {
               </div>
               <Input
                 id="fkaleRedeemAmount"
+                fieldSize="md"
+                label=""
                 type="number"
                 placeholder="1000"
                 value={fkaleRedeemAmount}
@@ -334,6 +339,7 @@ const RedeemKale: React.FC = () => {
 
             <Button
               variant="primary"
+              size="md"
               onClick={handleRedeemFKale}
               disabled={!fkaleRedeemAmount || isLoading}
               style={{ width: "100%" }}
@@ -352,11 +358,11 @@ const RedeemKale: React.FC = () => {
                 You'll receive {fkaleRedeemAmount || '0'} KALE for {fkaleRedeemAmount || '0'} fKALE
               </small>
             </div>
-          </Card>
+          </div>
         </div>
 
         {/* Info Section */}
-        <Card style={{ marginTop: "2rem", padding: "2rem", backgroundColor: "#f8f9fa" }}>
+        <div style={{ marginTop: "2rem", padding: "2rem", backgroundColor: "#f8f9fa", borderRadius: "8px", border: "1px solid var(--border-light, #e0e0e0)" }}>
           <h3>How Redemption Works</h3>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "2rem" }}>
             <div>
@@ -378,7 +384,7 @@ const RedeemKale: React.FC = () => {
               </ul>
             </div>
           </div>
-        </Card>
+        </div>
       </Layout.Inset>
     </Layout.Content>
   );

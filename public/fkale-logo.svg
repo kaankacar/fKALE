@@ -1,0 +1,19 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="60" cy="60" r="58" fill="#0F1419" stroke="#2DD4BF" stroke-width="4"/>
+  
+  <!-- Stylized "f" -->
+  <path d="M30 35 L30 85 M30 35 L55 35 M30 55 L50 55" stroke="#2DD4BF" stroke-width="4" stroke-linecap="round"/>
+  
+  <!-- KALE leaf/plant symbol -->
+  <path d="M70 35 Q75 25, 85 35 Q90 45, 85 55 Q80 65, 70 55 Q65 45, 70 35" fill="#10B981" stroke="#059669" stroke-width="2"/>
+  <path d="M70 55 Q75 45, 85 55 Q90 65, 85 75 Q80 85, 70 75 Q65 65, 70 55" fill="#34D399" stroke="#059669" stroke-width="2"/>
+  
+  <!-- Forward arrow/future symbol -->
+  <path d="M75 75 L90 75 M85 70 L90 75 L85 80" stroke="#2DD4BF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Small decorative dots -->
+  <circle cx="45" cy="75" r="2" fill="#2DD4BF"/>
+  <circle cx="50" cy="80" r="1.5" fill="#10B981"/>
+  <circle cx="40" cy="80" r="1.5" fill="#10B981"/>
+</svg>

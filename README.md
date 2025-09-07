@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="public/fkale-logo.svg" alt="fKALE Logo" width="120" height="120">
+</div>
+
 # fKALE
 ## *Trade your future $KALE*
 
