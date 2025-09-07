@@ -12,26 +12,6 @@ fKALE is a platform that allows users to leverage their future KALE token expect
 - ⚡ **Instant Liquidity**: Get immediate access to capital without selling your XLM
 - 🔄 **Volatility Participation**: Stay exposed to XLM price movements while leveraging future yields
 
-## Project Overview
-
-| **Category** | **Details** |
-|--------------|-------------|
-| **🏗️ Project Type** | DeFi Protocol on Stellar Blockchain |
-| **🎯 Primary Function** | Collateralized Token Minting & Future Asset Trading |
-| **💰 Collateral Asset** | XLM (Stellar Lumens) |
-| **🌾 Target Asset** | KALE Tokens |
-| **🔄 Exchange Rate** | 1 XLM = 1000 fKALE tokens |
-| **🔒 Collateral Ratio** | 1:1 (1 XLM locked per 1 XLM worth of fKALE) |
-| **⏰ Lock Period** | 30 days (MVP) |
-| **🌐 Network** | Stellar Testnet (MVP) → Mainnet (Production) |
-| **🏛️ Architecture** | Smart Contracts + React Frontend |
-| **🔧 Status** | MVP Demo (Not Production Ready) |
-| **🛡️ Security** | Unaudited (Audit Required for Production) |
-| **📱 Platforms** | Web Application (Mobile Responsive) |
-| **🎨 UI Framework** | React + TypeScript + Stellar Design System |
-| **⚡ Key Features** | Mint, Redeem, Position Management, Debug Tools |
-| **🚀 Deployment** | Automated via npm scripts |
-
 ## Live Application Features
 
 ### 🏠 **Home Dashboard**
