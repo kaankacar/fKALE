@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Layout, Card, Button } from "@stellar/design-system";
+import { Button } from "@stellar/design-system";
 import { useNavigate } from "react-router-dom";
 import { useWallet } from "../hooks/useWallet";
 import { useWalletBalance } from "../hooks/useWalletBalance";
@@ -26,10 +26,10 @@ const Home: React.FC = () => {
   }, [address]);
 
   return (
-    <Layout.Content style={{ padding: 0 }}>
+    <div>
       <HeroSection />
       
-      <Layout.Inset style={{ padding: '4rem 2rem' }}>
+      <div style={{ padding: '4rem 2rem' }}>
         {/* Stats Section */}
         {address && (
           <div style={{ marginBottom: '4rem' }}>
@@ -85,12 +85,16 @@ const Home: React.FC = () => {
           </h2>
           
           <div className="grid grid-cols-3" style={{ gap: '2rem' }}>
-            <Card 
+            <div 
               className="card animate-fade-in-up"
               style={{ 
                 animationDelay: '0.1s',
                 textAlign: 'center',
-                cursor: 'pointer'
+                cursor: 'pointer',
+                background: 'var(--bg-card)',
+                border: '1px solid var(--border-light)',
+                borderRadius: '16px',
+                padding: '2rem'
               }}
               onClick={() => address && navigate("/buy-fkale")}
             >
@@ -132,6 +136,7 @@ const Home: React.FC = () => {
               </div>
               <Button 
                 variant="primary"
+                size="md"
                 disabled={!address}
                 style={{ 
                   width: '100%',
@@ -141,14 +146,18 @@ const Home: React.FC = () => {
               >
                 {!address ? 'Connect Wallet' : 'Mint fKALE'}
               </Button>
-            </Card>
+            </div>
 
-            <Card 
+            <div 
               className="card animate-fade-in-up"
               style={{ 
                 animationDelay: '0.2s',
                 textAlign: 'center',
-                cursor: 'pointer'
+                cursor: 'pointer',
+                background: 'var(--bg-card)',
+                border: '1px solid var(--border-light)',
+                borderRadius: '16px',
+                padding: '2rem'
               }}
               onClick={() => address && navigate("/redeem-kale")}
             >
@@ -190,6 +199,7 @@ const Home: React.FC = () => {
               </div>
               <Button 
                 variant="primary"
+                size="md"
                 disabled={!address}
                 style={{ 
                   width: '100%',
@@ -199,14 +209,18 @@ const Home: React.FC = () => {
               >
                 {!address ? 'Connect Wallet' : 'Redeem KALE'}
               </Button>
-            </Card>
+            </div>
 
-            <Card 
+            <div 
               className="card animate-fade-in-up"
               style={{ 
                 animationDelay: '0.3s',
                 textAlign: 'center',
-                cursor: 'pointer'
+                cursor: 'pointer',
+                background: 'var(--bg-card)',
+                border: '1px solid var(--border-light)',
+                borderRadius: '16px',
+                padding: '2rem'
               }}
               onClick={() => address && navigate("/manage-position")}
             >
@@ -248,6 +262,7 @@ const Home: React.FC = () => {
               </div>
               <Button 
                 variant="primary"
+                size="md"
                 disabled={!address}
                 style={{ 
                   width: '100%',
@@ -257,7 +272,7 @@ const Home: React.FC = () => {
               >
                 {!address ? 'Connect Wallet' : 'View Position'}
               </Button>
-            </Card>
+            </div>
           </div>
         </div>
 
@@ -341,8 +356,8 @@ const Home: React.FC = () => {
             </p>
           </div>
         </div>
-      </Layout.Inset>
-    </Layout.Content>
+      </div>
+    </div>
   );
 };
 

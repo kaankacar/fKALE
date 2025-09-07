@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Layout, Card, Button, Input, Alert } from "@stellar/design-system";
+import { Layout, Button, Input, Alert } from "@stellar/design-system";
 import { useWallet } from "../hooks/useWallet";
 import { 
   getUserPosition, 
@@ -158,15 +158,19 @@ const RedeemKale: React.FC = () => {
         </p>
 
         {error && (
-          <Alert variant="error" style={{ marginBottom: "1rem" }}>
-            {error}
-          </Alert>
+          <div style={{ marginBottom: "1rem" }}>
+            <Alert variant="error" placement="inline">
+              {error}
+            </Alert>
+          </div>
         )}
 
         {success && (
-          <Alert variant="success" style={{ marginBottom: "1rem" }}>
-            {success}
-          </Alert>
+          <div style={{ marginBottom: "1rem" }}>
+            <Alert variant="success" placement="inline">
+              {success}
+            </Alert>
+          </div>
         )}
 
         {/* Loading State */}

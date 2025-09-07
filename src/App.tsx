@@ -16,11 +16,7 @@ const AppLayout: React.FC = () => (
   <main style={{ background: 'var(--bg-primary)', minHeight: '100vh' }}>
     <Layout.Header
       projectId="fKALE"
-      projectTitle={
-        <span className="text-gradient" style={{ fontSize: '1.5rem', fontWeight: '800' }}>
-          fKALE
-        </span>
-      }
+      projectTitle="fKALE"
       contentRight={
         <>
           <nav style={{ display: "flex", gap: "8px", alignItems: "center" }}>
@@ -107,23 +103,17 @@ const AppLayout: React.FC = () => (
           </div>
         </>
       }
-      style={{
-        background: 'var(--bg-glass)',
-        backdropFilter: 'blur(20px)',
-        borderBottom: '1px solid var(--border-light)',
-        boxShadow: 'var(--shadow-sm)'
-      }}
     />
     <ErrorBoundary>
       <Outlet />
     </ErrorBoundary>
-    <Layout.Footer
-      style={{
-        background: 'var(--bg-secondary)',
-        borderTop: '1px solid var(--border-light)',
-        color: 'var(--text-secondary)'
-      }}
-    >
+    <div style={{
+      background: 'var(--bg-secondary)',
+      borderTop: '1px solid var(--border-light)',
+      color: 'var(--text-secondary)',
+      padding: '1rem',
+      textAlign: 'center'
+    }}>
       <span>
         © {new Date().getFullYear()} fKALE - "Trade your unfarmed $KALE". Licensed under the{" "}
         <a
@@ -136,7 +126,7 @@ const AppLayout: React.FC = () => (
         </a>
         .
       </span>
-    </Layout.Footer>
+    </div>
   </main>
 );
 

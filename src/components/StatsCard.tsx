@@ -1,5 +1,4 @@
 import React from 'react';
-import { Card } from '@stellar/design-system';
 
 interface StatsCardProps {
   title: string;
@@ -37,7 +36,7 @@ const StatsCard: React.FC<StatsCardProps> = ({
   };
 
   return (
-    <Card
+    <div
       className={`card animate-fade-in-up ${loading ? 'loading' : ''}`}
       style={{
         background: 'var(--bg-card)',
@@ -51,12 +50,12 @@ const StatsCard: React.FC<StatsCardProps> = ({
         flexDirection: 'column',
         justifyContent: 'space-between'
       }}
-      onMouseEnter={(e) => {
+      onMouseEnter={(e: React.MouseEvent<HTMLDivElement>) => {
         e.currentTarget.style.transform = 'translateY(-4px)';
         e.currentTarget.style.boxShadow = 'var(--shadow-lg)';
         e.currentTarget.style.borderColor = 'var(--brand-primary)';
       }}
-      onMouseLeave={(e) => {
+      onMouseLeave={(e: React.MouseEvent<HTMLDivElement>) => {
         e.currentTarget.style.transform = 'translateY(0)';
         e.currentTarget.style.boxShadow = 'var(--shadow-md)';
         e.currentTarget.style.borderColor = 'var(--border-light)';
@@ -133,7 +132,7 @@ const StatsCard: React.FC<StatsCardProps> = ({
           </div>
         )}
       </div>
-    </Card>
+    </div>
   );
 };
 

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Layout, Card, Button, Input, Alert } from "@stellar/design-system";
+import { Layout, Button, Input, Alert } from "@stellar/design-system";
 import { useWallet } from "../hooks/useWallet";
 import { 
   getUserPosition, 
@@ -157,10 +157,10 @@ const ManagePosition: React.FC = () => {
     return (
       <Layout.Content>
         <Layout.Inset>
-          <Card style={{ padding: "2rem", textAlign: "center" }}>
+          <div style={{ padding: "2rem", textAlign: "center", background: "var(--bg-card, #fff)", borderRadius: "8px", border: "1px solid var(--border-light, #e0e0e0)" }}>
             <h2>Connect Wallet</h2>
             <p>Please connect your wallet to manage your position.</p>
-          </Card>
+          </div>
         </Layout.Inset>
       </Layout.Content>
     );
@@ -175,27 +175,31 @@ const ManagePosition: React.FC = () => {
         </p>
 
         {error && (
-          <Alert variant="error" style={{ marginBottom: "1rem" }}>
-            {error}
-          </Alert>
+          <div style={{ marginBottom: "1rem" }}>
+            <Alert variant="error" placement="inline">
+              {error}
+            </Alert>
+          </div>
         )}
 
         {success && (
-          <Alert variant="success" style={{ marginBottom: "1rem" }}>
-            {success}
-          </Alert>
-        )}
+            <div style={{ marginBottom: "1rem" }}>
+              <Alert variant="success" placement="inline">
+                {success}
+              </Alert>
+            </div>
+          )}
 
         {/* Loading State */}
         {loading && address && (
-          <Card style={{ padding: "2rem", marginBottom: "2rem", textAlign: "center" }}>
+          <div style={{ padding: "2rem", marginBottom: "2rem", textAlign: "center", background: "var(--bg-card, #fff)", borderRadius: "8px", border: "1px solid var(--border-light, #e0e0e0)" }}>
             <div>Loading your position data...</div>
-          </Card>
+          </div>
         )}
 
         {/* Position Details */}
         {!loading && userPosition ? (
-          <Card style={{ padding: "2rem", marginBottom: "2rem" }}>
+          <div style={{ padding: "2rem", marginBottom: "2rem", background: "var(--bg-card, #fff)", borderRadius: "8px", border: "1px solid var(--border-light, #e0e0e0)" }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "1.5rem" }}>
               <h3>Your Position</h3>
               <div style={{ 
@@ -261,6 +265,7 @@ const ManagePosition: React.FC = () => {
                   </p>
                   <Button
                     variant="primary"
+                    size="md"
                     onClick={handleWithdrawXlm}
                     disabled={isLoading}
                     style={{ backgroundColor: "#2d5a2d" }}
@@ -280,6 +285,7 @@ const ManagePosition: React.FC = () => {
                   </p>
                   <Button
                     variant="secondary"
+                    size="md"
                     disabled
                     style={{ opacity: 0.5 }}
                   >
@@ -288,19 +294,19 @@ const ManagePosition: React.FC = () => {
                 </div>
               )}
             </div>
-          </Card>
+          </div>
         ) : !loading && address ? (
-          <Card style={{ padding: "2rem", textAlign: "center", marginBottom: "2rem" }}>
+          <div style={{ padding: "2rem", textAlign: "center", marginBottom: "2rem", background: "var(--bg-card, #fff)", borderRadius: "8px", border: "1px solid var(--border-light, #e0e0e0)" }}>
             <h3>No Position Found</h3>
             <p style={{ color: "#666" }}>
               You don't have an active fKALE position. Visit the "Buy fKALE" page to create one.
             </p>
-          </Card>
+          </div>
         ) : null}
 
         {/* Admin Liquidation Panel */}
         {isAdmin && (
-          <Card style={{ padding: "2rem", backgroundColor: "#fff8e1", border: "2px solid #ffc107" }}>
+          <div style={{ padding: "2rem", backgroundColor: "#fff8e1", border: "2px solid #ffc107", borderRadius: "8px" }}>
             <h3 style={{ color: "#856404" }}>🔨 Admin Liquidation Panel</h3>
             <p style={{ color: "#856404", marginBottom: "1.5rem" }}>
               As the contract admin, you can liquidate positions that have matured but failed to deliver sufficient KALE.
@@ -312,6 +318,8 @@ const ManagePosition: React.FC = () => {
               </label>
               <Input
                 id="liquidationUser"
+                fieldSize="md"
+                label=""
                 type="text"
                 placeholder="GXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
                 value={liquidationUser}
@@ -329,6 +337,7 @@ const ManagePosition: React.FC = () => {
 
             <Button
               variant="primary"
+              size="md"
               onClick={handleLiquidatePosition}
               disabled={!liquidationUser || isLoading}
               style={{ backgroundColor: "#d73527", borderColor: "#d73527" }}
@@ -351,11 +360,11 @@ const ManagePosition: React.FC = () => {
                 <li>This action is irreversible</li>
               </ul>
             </div>
-          </Card>
+          </div>
         )}
 
         {/* Contract Information */}
-        <Card style={{ marginTop: "2rem", padding: "2rem", backgroundColor: "#f8f9fa" }}>
+        <div style={{ marginTop: "2rem", padding: "2rem", backgroundColor: "#f8f9fa", borderRadius: "8px", border: "1px solid var(--border-light, #e0e0e0)" }}>
           <h3>Contract Information</h3>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "1rem" }}>
             <div>
@@ -385,7 +394,7 @@ const ManagePosition: React.FC = () => {
               </div>
             </div>
           </div>
-        </Card>
+        </div>
       </Layout.Inset>
     </Layout.Content>
   );
