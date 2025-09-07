@@ -1,5 +1,5 @@
 # fKALE
-## *"Trade your future $KALE"*
+## *Trade your future $KALE*
 
 fKALE is a revolutionary DeFi platform on Stellar that allows users to leverage their future KALE token expectations without selling their XLM holdings. Users can provide 1:1 XLM collateral to mint fKALE tokens at a 1000:1 ratio, maintaining exposure to XLM volatility while accessing liquidity from their anticipated KALE farming rewards.
 
