@@ -1,11 +1,11 @@
 # fKALE
-## *"Trade your unfarmed $KALE"*
+## *"Trade your future $KALE"*
 
 fKALE is a revolutionary DeFi platform on Stellar that allows users to leverage their future KALE token expectations without selling their XLM holdings. Users can provide 1:1 XLM collateral to mint fKALE tokens at a 1000:1 ratio, maintaining exposure to XLM volatility while accessing liquidity from their anticipated KALE farming rewards.
 
 ## Core Value Proposition
 
-**Trade your unfarmed $KALE** - fKALE enables users to:
+**Trade your future $KALE** - fKALE enables users to:
 - 🔒 **Maintain XLM Exposure**: Keep your XLM bags while accessing liquidity
 - 💰 **1:1 Collateral Efficiency**: Provide 1 XLM, receive 1000 fKALE tokens
 - 🌾 **Monetize Future Farming**: Trade expected KALE rewards before you farm them
@@ -228,10 +228,7 @@ npm run setup:complete
 
 - **MVP Status**: Current implementation is for demonstration only
 - **Shared Pools**: Not suitable for production use
-- **Audit Required**: Contracts need professional security audit
 - **Testnet Only**: Do not use real funds without proper auditing
-- **Smart Contract Risk**: Potential for bugs or vulnerabilities
-- **Market Risk**: XLM and KALE price volatility affects positions
 
 ## Contributing
 
@@ -255,11 +252,11 @@ This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENS
 
 ## Support & Community
 
-- **GitHub Issues**: [Report bugs or request features](https://github.com/your-username/fkale/issues)
+- **GitHub Issues**: [Report bugs or request features](https://github.com/kaankacar/fkale/issues)
 - **Documentation**: [Soroban Documentation](https://developers.stellar.org/docs/soroban)
 - **Community**: [Stellar Discord](https://discord.gg/stellardev)
 - **Updates**: Follow development progress on GitHub
 
 ---
 
-**Built with ❤️ on Stellar** | **fKALE Protocol** | **"Trade your unfarmed $KALE"**
+**Built with ❤️ on Stellar** | **fKALE Protocol** | **"Trade your future $KALE"**
