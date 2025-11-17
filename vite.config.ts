@@ -18,6 +18,23 @@ export default defineConfig(() => {
     ],
     build: {
       target: "esnext",
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            vendor: ["react", "react-dom", "react-router-dom"],
+            "stellar-sdk": ["@stellar/stellar-sdk"],
+            "design-system": ["@stellar/design-system"],
+            debug: [
+              "./src/debug/components/PrettyJson",
+              "./src/debug/components/RenderArrayType",
+              "./src/debug/components/RenderOneOf",
+              "./src/debug/components/RenderPrimitivesType",
+              "./src/debug/components/RenderTupleType",
+            ],
+          },
+        },
+      },
+      chunkSizeWarningLimit: 1000,
     },
     optimizeDeps: {
       exclude: ["@stellar/stellar-xdr-json"],

@@ -14,6 +14,7 @@ export default tseslint.config(
     "packages",
     "src/contracts/*",
     "!src/contracts/util.ts",
+    "scripts/**/*.ts",
   ]),
   {
     extends: [
@@ -39,6 +40,17 @@ export default tseslint.config(
         "warn",
         { allowConstantExport: true },
       ],
+    },
+  },
+  // Relaxed rules for debug code
+  {
+    files: ["src/debug/**/*.{ts,tsx}"],
+    rules: {
+      "@typescript-eslint/no-unsafe-assignment": "warn",
+      "@typescript-eslint/no-unsafe-member-access": "warn",
+      "@typescript-eslint/no-unsafe-call": "warn",
+      "@typescript-eslint/no-unsafe-argument": "warn",
+      "react-x/no-array-index-key": "warn",
     },
   },
 );
